@@ -43,7 +43,7 @@ begin
 process(in0)
 begin
 
-   if ( in0(0)'event and (in0(0) ='1' and in0(0)='0')) then
+   --if ( in0(0)'event and (in0(0) ='1' and in0(0)='0')) then
          case in0 is
             when "00" => out0 <= "0001";
             when "01" => out0 <= "0010";
@@ -51,7 +51,7 @@ begin
             when "11" => out0 <= "1000";
             when others => out0 <= "0000";
          end case;
-   end if;
+   --end if;
 end process;
 
 				
