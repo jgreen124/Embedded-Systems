@@ -57,19 +57,21 @@ component decoder1to2 is
            out2 : out STD_LOGIC);
 end component decoder1to2;
 
-component reg8 is 
+component reg8_fallingEdge is 
     Port ( reg_in : in STD_LOGIC_VECTOR(7 downto 0);
            clk : in STD_LOGIC;
            ld : in STD_LOGIC;
            reg_out : out STD_LOGIC_VECTOR(7 downto 0));
-end component reg8;
+end component reg8_fallingEdge;
 
 
 signal LDA : std_logic;
 signal LDB : std_logic;
+signal invertedClock : std_logic;
 signal muxOut : std_logic_vector(7 downto 0);
 
 begin
+invertedClock <= not(clk);
 
 decoder : decoder1to2 port map(
             in1 => DS,
@@ -84,13 +86,13 @@ mux : mux4i1o port map (
             sel => MS,
             out1 => muxOut);
 
-register_a : reg8 port map(
+register_a : reg8_fallingEdge port map(
             reg_in => muxOut,
             clk => clk,
             ld => LDA,
             reg_out => RA);
             
-register_b : reg8 port map(
+register_b : reg8_fallingEdge port map(
             reg_in => RA,
             clk => clk,
             ld => LDB,

@@ -62,8 +62,8 @@ signal muxout : std_logic_vector(7 downto 0);
 begin
 
 mux :   mux2i1o port map (
-                    in1 => A,
-                    in2 => B,
+                    in1 => B,
+                    in2 => A,
                     sel => SEL,
                     out1 => muxout);
                     

@@ -50,12 +50,12 @@ component mux2i1o is
            out1 : out std_logic_vector(7 downto 0));
 end component mux2i1o;
 
-component reg8 is 
+component reg8_fallingEdge is 
     Port ( reg_in : in STD_LOGIC_VECTOR(7 downto 0);
            clk : in STD_LOGIC;
            ld : in STD_LOGIC;
            reg_out : out STD_LOGIC_VECTOR(7 downto 0));
-end component reg8;
+end component reg8_fallingEdge;
 
 signal inputMuxOut, secondMuxOut : std_logic_vector(7 downto 0);
 signal and1Out, and2Out : std_logic;
@@ -75,13 +75,13 @@ registerMux : mux2i1o port map (
     in1 => Y,
     sel => S0);
  
-regb : reg8 port map (
+regb : reg8_fallingEdge port map (
     clk => clk,
     reg_in => inputMuxOut,
     ld =>  and1Out,
     reg_out => RB);
 
-rega : reg8 port map (
+rega : reg8_fallingEdge port map (
     ld => and2Out,
     reg_in => secondMuxOut,
     clk => clk,

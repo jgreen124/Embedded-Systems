@@ -41,13 +41,6 @@ architecture Behavioral of decoder1to2 is
 
 begin
 
-decode : process(in1) begin
-    if(in1 = '1') then
-        out2 <= '1';
-        out1 <= '0';
-    else
-        out2 <= '0';
-        out1 <= '1';
-    end if;
-end process decode;
+out1 <= not(in1);
+out2 <= in1;
 end Behavioral;
