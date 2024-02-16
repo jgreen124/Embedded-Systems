@@ -60,12 +60,12 @@ begin
 --• Even if en is 1, if clk_en is 0 nothing can change the circuit except rst
 --• When rst is asserted the cnt value will become 0.
 
---• It can count either up or down depending on the value of a “direction” register, which is updated
+--• It can count either up or down depending on the value of a “direction�? register, which is updated
 --at the clock rising edge with the value present at dir when updn is 1.
 
---• On the clock rising edge, if ld is 1, the value present at val will be loaded into the “value” register.
+--• On the clock rising edge, if ld is 1, the value present at val will be loaded into the “value�? register.
 
---• If counting up, it will count until the number in a 4-bit “value” register has been reached, at
+--• If counting up, it will count until the number in a 4-bit “value�? register has been reached, at
 --which point it will roll over to 0000. If counting down, it will go from 0000 to value when it
 --underflows.
 
@@ -73,7 +73,7 @@ begin
     
         if (en = '1') then
             if (rst = '1') then
-                cnt <= "0000";
+                --cnt <= "0000";
                 current_cnt <= "0000"; --reset counter
             end if;
             if (clk_en = '1') then
@@ -82,17 +82,19 @@ begin
                 end if;
                 if (current_dir = '1') then
                     if (current_cnt = current_val) then
-                        cnt <= "0000";
+                        --cnt <= "0000";
                         current_cnt <= "0000";
                     else
-                        cnt <=std_logic_vector(unsigned(current_cnt) + 1);
+                        --cnt <=std_logic_vector(unsigned(current_cnt) + 1);
+                        current_cnt <=std_logic_vector(unsigned(current_cnt) + 1);
                     end if;
                 else
                     if (unsigned(current_cnt) = 0) then
-                        cnt <=current_val;
+                        --cnt <=current_val;
                         current_cnt <= current_val;
                     else
-                        cnt <= std_logic_vector(unsigned(current_cnt)-1);
+                        --cnt <= std_logic_vector(unsigned(current_cnt)-1);
+                        current_cnt <= std_logic_vector(unsigned(current_cnt)-1);
                     end if;
                 end if;
                 if (ld = '1') then
@@ -101,6 +103,7 @@ begin
             end if;
         end if;
     end if;
+    cnt <= current_cnt;
   
                 
 end process;
