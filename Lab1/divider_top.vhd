@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity divider_top is
     Port ( clk : in STD_LOGIC;
-           led0 : inout STD_LOGIC);
+           led0 : out STD_LOGIC);
 end divider_top;
 
 
@@ -59,15 +59,17 @@ signal led_state : std_logic;
 begin
 led_state <= not(led0);
 
-clock_divider : clock_div port map (
+divide_clock : clock_div port map (
     clk => clk,
     en => clock_div_out);
     
-led_register : led_reg port map (
-    reg_in => led_state,
-    clk => clk,
-    clk_en => clock_div_out,
-    reg_out => led0);
+load_process : process(clk) begin
+    if (rising_edge(clk)) then
+        if (clock_div_out = '1') then
+            led0 <= not(led0);
+        end if;
+    end if;
+end process load_process;
     
 
     

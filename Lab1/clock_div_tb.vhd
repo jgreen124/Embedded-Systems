@@ -18,6 +18,8 @@ architecture testbench of clock_div_tb is
 
     signal tb_clk : std_logic := '0';
     signal tb_en  : std_logic;
+    signal button_press: std_logic;
+    signal button_output : std_logic;
     
     component clock_div is
         port(
@@ -26,6 +28,13 @@ architecture testbench of clock_div_tb is
             en   : out std_logic
 
         );
+    end component;
+    
+    component debouncer is
+        port (
+            in0 : in std_logic;
+            clk : in std_logic;
+            out0 : out std_logic);
     end component;
 
 begin
@@ -46,6 +55,19 @@ begin
     
     end process clk_gen_proc;
     
+    button_hold_proc : process
+    begin
+        button_press <= '0';
+        wait for 50 ms;
+        button_press <= '1';
+        wait for 50 ms;
+        button_press <= '0';
+        wait for 50 ms;
+        button_press <= '1';
+        wait for 10 ms;
+        button_press <= '0';
+        wait for 100 ms;
+    end process button_hold_proc;
     -- flip the switch high after 1ms
     --switch_proc: process
     --begin
@@ -59,12 +81,12 @@ begin
 -- port mapping
 --------------------------------------------------------------------------------
 
-    dut : clock_div
+    dut : debouncer
     port map (
     
         clk  => tb_clk,
-        en => tb_en
-        
+        in0 => button_press,
+        out0 => button_output
     
     );
 
