@@ -81,12 +81,11 @@ begin
 -- port mapping
 --------------------------------------------------------------------------------
 
-    dut : debouncer
+    dut : clock_div
     port map (
     
         clk  => tb_clk,
-        in0 => button_press,
-        out0 => button_output
+        en=> tb_en
     
     );
 
