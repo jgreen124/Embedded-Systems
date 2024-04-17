@@ -1,0 +1,29 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-4-jgreen124-main/ESLab4/clock_div.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-4-jgreen124-main/ESLab4/vga_ctrl.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/regs.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/framebuffer.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-4-jgreen124-main/ESLab4/pixel_pusher.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-3-jgreen124-main/uart_rx.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-3-jgreen124-main/uart_tx.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-3-jgreen124-main/uart.vhd" \
+"../../../../lab5.srcs/sources_1/new/clock_div_uart.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/lab-2-jgreen124-main/Lab2/my_alu.vhd" \
+"../../../../../Desktop/lab-5-jgreen124-main/controls.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_clock_div_image_top_0_0/sim/uproc_top_level_clock_div_image_top_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_vga_ctrl_0_0/sim/uproc_top_level_vga_ctrl_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_regs_0_0/sim/uproc_top_level_regs_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_framebuffer_0_0/sim/uproc_top_level_framebuffer_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_debouncer_0_0/sim/uproc_top_level_debouncer_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_pixel_pusher_0_0/sim/uproc_top_level_pixel_pusher_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_uart_0_0/sim/uproc_top_level_uart_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_clock_div_uart_0_0/sim/uproc_top_level_clock_div_uart_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_my_alu_0_0/sim/uproc_top_level_my_alu_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_controls_0_0/sim/uproc_top_level_controls_0_0.vhd" \
+"../../../../lab5.ip_user_files/bd/uproc_top_level/sim/uproc_top_level.vhd" \
+"../../../../lab5.gen/sources_1/bd/uproc_top_level/hdl/uproc_top_level_wrapper.vhd" \
+"../../../../lab5.srcs/sim_1/new/uproc_top_level_wrapper_tb.vhd" \
+
+# Do not sort compile order
+nosort

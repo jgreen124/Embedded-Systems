@@ -1,0 +1,4 @@
+Running: xsim.dir/uproc_top_level_wrapper_tb_behav/xsimk -simmode gui -wdb uproc_top_level_wrapper_tb_behav.wdb -simrunnum 0 -socket 55635
+Design successfully loaded
+Design Loading Memory Usage: 37496 KB (Peak: 37496 KB)
+Design Loading CPU Usage: 20 ms

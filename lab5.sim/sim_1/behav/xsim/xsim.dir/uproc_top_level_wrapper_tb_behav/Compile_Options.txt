@@ -1,0 +1,1 @@
+-wto "b62df80cab434fdd980a082523a3abd3" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "uproc_top_level_wrapper_tb_behav" "xil_defaultlib.uproc_top_level_wrapper_tb" -log "elaborate.log" 

@@ -1,0 +1,10 @@
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: /home/software/Xilinx/Vivado/2021.1/bin/unwrapped/lnx64.o/xelab -wto b62df80cab434fdd980a082523a3abd3 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot uproc_top_level_wrapper_tb_behav xil_defaultlib.uproc_top_level_wrapper_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-4940] 'debouncer' remains a black box since it has no binding entity [/home/user/lab5/lab5.ip_user_files/bd/uproc_top_level/ip/uproc_top_level_debouncer_0_0/sim/uproc_top_level_debouncer_0_0.vhd:81]
+WARNING: [VRFC 10-4940] 'uproc_top_level_blk_mem_gen_0_2' remains a black box since it has no binding entity [/home/user/lab5/lab5.ip_user_files/bd/uproc_top_level/sim/uproc_top_level.vhd:285]
+WARNING: [VRFC 10-4940] 'uproc_top_level_blk_mem_gen_0_1' remains a black box since it has no binding entity [/home/user/lab5/lab5.ip_user_files/bd/uproc_top_level/sim/uproc_top_level.vhd:306]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
