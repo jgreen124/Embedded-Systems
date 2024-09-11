@@ -1,27 +1,0 @@
-2024-09-11T18:42:17.1577200255-18:42:17 **** Build of configuration Debug for project IntroApplication ****
-000-make all 
-000-make --no-print-directory pre-build
-000-a9-linaro-pre-build-step
-000- 
-000-make --no-print-directory main-build
-000-Building file: ../src/main.c
-000-Invoking: ARM v7 gcc compiler
-000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/user/Documents/Embedded-Systems-main/ES2/ES2IntroLab/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-000-../src/main.c: In function 'main':
-000/IntroApplication/src/main.c7-1-1'XPAR_AXI_GPIO_BUTTONS_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_AXI_GPIO_BTN_DEVICE_ID'?2XPAR_AXI_GPIO_BUTTONS_DEVICE_ID../src/main.c:7:16: error: 'XPAR_AXI_GPIO_BUTTONS_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_AXI_GPIO_BTN_DEVICE_ID'?
-000-    7 | #define BTN_ID XPAR_AXI_GPIO_BUTTONS_DEVICE_ID
-000-      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-000/IntroApplication/src/main.c26-1-1in expansion of macro 'BTN_ID'0-../src/main.c:26:31: note: in expansion of macro 'BTN_ID'
-000-   26 |  cfg_ptr = XGpio_LookupConfig(BTN_ID);
-000-      |                               ^~~~~~
-000/IntroApplication/src/main.c7-1-1each undeclared identifier is reported only once for each function it appears in0-../src/main.c:7:16: note: each undeclared identifier is reported only once for each function it appears in
-000-    7 | #define BTN_ID XPAR_AXI_GPIO_BUTTONS_DEVICE_ID
-000-      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-000/IntroApplication/src/main.c26-1-1in expansion of macro 'BTN_ID'0-../src/main.c:26:31: note: in expansion of macro 'BTN_ID'
-000-   26 |  cfg_ptr = XGpio_LookupConfig(BTN_ID);
-000-      |                               ^~~~~~
-000/IntroApplication0-1-1make[1]: *** [src/subdir.mk:23: src/main.o] Error 12-make[1]: *** [src/subdir.mk:23: src/main.o] Error 1
-000/IntroApplication0-1-1make: *** [makefile:34: all] Error 22-make: *** [makefile:34: all] Error 2
-00255-
-18:42:17 Build Finished (took 524ms)
-
